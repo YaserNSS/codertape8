@@ -9,5 +9,8 @@ ssh-keygen -t rsa -b 4096 -C "yasir.nss@gmail.com"
 5. git add *
 6. git commit -m "Initial Project"
 7. git remote add origin git@github.com:YaserNSS/codertape8.git
-8. git pull origin master --rebase
+8. git push -u origin master
+9. git pull origin master --rebase
+
+
 
