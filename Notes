@@ -1,0 +1,13 @@
+1. create repo in github
+https://github.com/YaserNSS?tab=repositories
+2. create key
+gen key
+ssh-keygen -t rsa -b 4096 -C "yasir.nss@gmail.com"
+
+3. git init | git status
+4. git ignore file in directory to ingnor unwanted durectory to upload
+5. git add *
+6. git commit -m "Initial Project"
+7. git remote add origin git@github.com:YaserNSS/codertape8.git
+8. git pull origin master --rebase
+
