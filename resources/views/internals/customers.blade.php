@@ -7,10 +7,13 @@
 <form action="customers" class="pb-5" method="POST">
     <div class="input-group">
         <input type="text" name="name" id="">
+        {{$errors->first('name')}}
     </div>
     <button type="submit">Add Customer</button>
     @csrf
 </form>
+
+
 
 
 <ul>
