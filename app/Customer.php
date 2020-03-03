@@ -13,6 +13,12 @@ class Customer extends Model
         return $query->where('active',1);
 
     }
+
+    public function company()
+    {
+        return $this->belongsTo('App\Company');
+    }
+
     public function scopeInactive($query)
     {
         return $query->where('active',0);
