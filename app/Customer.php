@@ -8,12 +8,13 @@ class Customer extends Model
 {
     protected $guarded = [];
 
+    protected $attributes = [
+        'active' => 1
+    ];
+
     public function getActiveAttribute($attribute)
     {
-        return [
-            0 => 'Inactive',
-            1 => 'Active',
-        ][$attribute];
+        return $this->activeOptions()[$attribute];
     }
 
     public function scopeActive($query)
@@ -31,5 +32,13 @@ class Customer extends Model
     {
         return $query->where('active',0);
 
+    }
+
+    public function activeOptions()
+    {
+        return [
+            0 => 'Inactive',
+            1 => 'Active',
+        ];
     }
 }

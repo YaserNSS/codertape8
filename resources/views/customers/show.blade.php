@@ -10,6 +10,12 @@
     <div class="col-12">
         <h1>Details for {{$customer->name}}</h1>
         <p><a href="/Codetaper/customers/{{$customer->id}}/edit">Edit</a></p>
+
+        <form action="/Codetaper/customers/{{$customer->id}}" method="POST">
+            @method('DELETE')
+            @csrf
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
     </div>
 </div>
 
