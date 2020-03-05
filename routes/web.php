@@ -16,16 +16,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('contact','ContactFormController@create');
+Route::post('contact', 'ContactFormController@store');
 
-// Route::get('contact', function () {
-//     return view('contact');
-// });
-
-// Route::get('about', function () {
-//     return view('about');
-// });
-
-Route::view('contact', 'contact');
 Route::view('about', 'about');
 
 Route::get('customers', 'CustomersController@index');
