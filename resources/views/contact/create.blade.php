@@ -4,6 +4,9 @@
 @section('content')
 <h1>Contact Us</h1>
 
+
+@if (! session()->has('message'))
+
 <form action="/Codetaper/contact" method="POST">
     <div class="form-group pb-2">
         <label for="name">Name</label>
@@ -27,6 +30,9 @@
     <button type="submit" class="btn btn-primary">Send Message</button>
     @csrf
 </form>
+
+@endif
+
 
 
 @endsection
