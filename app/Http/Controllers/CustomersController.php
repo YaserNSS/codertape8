@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class CustomersController extends Controller
 {
+
+    public function __constract()
+    {
+        $this->middleware('auth')->except(['index']);
+    }
+
+
     public function index()
     {
         $customers =Customer::all();
