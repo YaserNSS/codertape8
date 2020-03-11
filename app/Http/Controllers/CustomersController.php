@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\Company;
 use Illuminate\Http\Request;
+use App\Events\NewCustomerHasRegisteredEvent;
+
 
 class CustomersController extends Controller
 {
 
     public function __constract()
     {
-        $this->middleware('auth')->except(['index']);
+        $this->middleware('auth');
     }
 
 
@@ -30,9 +32,13 @@ class CustomersController extends Controller
     public function store()
     {
 
+        $customer = Customer::create($this->validateRequest());
 
-        Customer::create($this->validateRequest());
+        //event for registeration notification
+        event(new NewCustomerHasRegisteredEvent($customer));
+
         return redirect('customers');
+
 
     }
 

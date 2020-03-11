@@ -21,7 +21,7 @@
             {{$customer->id}}
         </div>
         <div class="col-4">
-            <a href="/Codetaper/customers/{{$customer->id}}">{{$customer->name}}</a>
+            <a href="{{ route('customers.show', ['customer' => $customer]) }}">{{$customer->name}}</a>
         </div>
         <div class="col-4">
             {{$customer->email}}
